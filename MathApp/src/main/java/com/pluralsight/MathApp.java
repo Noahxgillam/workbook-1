@@ -2,6 +2,8 @@ package com.pluralsight;
 
 import java.util.Scanner;
 
+import static java.lang.System.*;
+
 public class MathApp {
 
     public static void main(String[] args) {
@@ -42,28 +44,28 @@ public class MathApp {
 
         System.out.println("The difference is: " + Math.pow(difference,2));*/
 
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter number 1: ");
+        Scanner scanner = new Scanner(in);
+        out.print("Enter number 1: ");
         int num1 = scanner.nextInt();
-        System.out.print("Enter number 2: ");
+        out.print("Enter number 2: ");
         int num2 = scanner.nextInt();
 
-        System.out.println("Pick an option");
+        out.println("Pick an option");
 
-        System.out.println("a=Add");
-        System.out.println("m=Multiply");
-        System.out.println("s=Subtract");
-        System.out.println("d=divide");
+        out.println("a=Add");
+        out.println("m=Multiply");
+        out.println("s=Subtragct");
+        out.println("d=divide");
 
-        Scanner optScanner = new Scanner(System.in);
-        System.out.print("Enter an option: ");
+        Scanner optScanner = new Scanner(in);
+        out.print("Enter an option: ");
         String optM = optScanner.nextLine();
         if (optM == "m") {
             Math.multiplyExact(num1, num2);
-
-            System.out.print("The answer is: " + num1 + " X " + num2 + " = " + (Math.multiplyExact(num1, num2)));
         }
-        else
-            System.out.println("Calculator does not included this function yet");
+            out.print("The answer is: " + num1 + " X " + num2 + " = " + (Math.multiplyExact(num1, num2)));
+        /*else{
+            out.println("Invald input");
+        }*/
     }
 }
