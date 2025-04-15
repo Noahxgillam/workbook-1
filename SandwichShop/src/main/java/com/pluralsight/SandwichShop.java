@@ -11,6 +11,10 @@ public class SandwichShop {
         System.out.println("$5.45  $8.95");
         int size = sizeScanner.nextInt();
 
+        Scanner loadedScanner = new Scanner(System.in);
+        System.out.println("loaded? yes/no");
+        String loaded = loadedScanner.nextLine().trim().toLowerCase();
+
         Scanner ageScanner = new Scanner(System.in);
         System.out.println("Enter your age: ");
         int age = ageScanner.nextInt();
@@ -21,14 +25,16 @@ public class SandwichShop {
         } else if (age >= 65) {
             discount = .20;
         }
+
         double price = 0;
         if (size == 1) {
-            price = 5.45 * (1 - discount);
+            price = 5.45 * (1 - discount)+ (loaded.equals("yes") ? 1.0 : 0.0);
+        } else if (size == 2) {
+            price = 8.95 * (1 - discount)+ (loaded.equals("yes") ? 1.75 : 0.0);
         }
-        else if (size == 2) {
-            price = 8.95 * (1 - discount);
-        }
-            System.out.println("The total will be before tax is: " + price);
+
+        double total = price;
+        System.out.println("The total will be before tax is: "+total);
+}
 
     }
-}
