@@ -13,7 +13,7 @@ public class SandwichShop {
 
         Scanner loadedScanner = new Scanner(System.in);
         System.out.println("loaded? yes/no");
-        String loaded = loadedScanner.nextLine().trim().toLowerCase();
+        String loaded = loadedScanner.nextLine().trim();
 
         Scanner ageScanner = new Scanner(System.in);
         System.out.println("Enter your age: ");
